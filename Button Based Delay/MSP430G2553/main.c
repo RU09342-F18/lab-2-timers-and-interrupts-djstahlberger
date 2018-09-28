@@ -11,15 +11,10 @@ int main(void)
 	
 	P1DIR |= BIT0; //Sets direction of P1.0 to output
 
-	P1DIR |= BIT6; //Sets P1.6 to output
-	P1OUT &= ~BIT6;
-
 	P1OUT |= BIT3; //Sets pull-down resistor
 	P1DIR &= ~BIT3; //Sets direction of P1.3 to input
 	P1REN |= BIT3; //Enables the pull up/down resistor
 	P1OUT |= BIT3; //Sets it to pull down
-
-	P1DIR &= ~BIT3; //Sets P1.3 to input
 
 	TACTL = TASSEL_1 | MC_1 | ID_2; //Enables ACLCK, sets up mode, sets internal divider to 4
 	CCTL0 = CCIE; //Interrupt Enable
