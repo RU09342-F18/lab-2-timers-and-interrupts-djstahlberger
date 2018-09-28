@@ -32,7 +32,7 @@ int main(void)
 __interrupt void Port_1(void){
     if(P1IES & BIT3){ //if FALLING edge is detected
         TACTL = TASSEL_1 | MC_2 | ID_2 | TACLR; //Enables ACLCK, sets continuous mode, sets internal divider to 4, CLEARS TIMER
-        P1IES &= ~BIT3; //sets interrupt to falling edge
+        P1IES &= ~BIT3; //sets interrupt to rising edge
     }
     else{
         TACTL = TASSEL_1 | MC_1 | ID_2; //Enables ACLCK, sets up mode, sets internal divider to 4
